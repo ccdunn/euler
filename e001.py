@@ -7,8 +7,7 @@ we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
-import numpy as np
-from utils.maths import *
+from utils import *
 
 
 def solve_0(N):
@@ -30,4 +29,5 @@ def solve_1(N):
 def solve(N):
     return solve_1(N)
 
+assert(solve(10) == 23)
 print(solve(1000))
