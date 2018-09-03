@@ -112,3 +112,8 @@ def primes_ub(N):
         y += 1
 
     return x
+
+
+def basify(x, base=10):
+    # convert a number to a list of base powers
+    return np.mod(x // (10 ** np.arange(np.floor(np.log(x)/np.log(base)), -1, -1)), base).astype(np.int)
