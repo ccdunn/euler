@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 
 def sum_1toN(N):
@@ -28,7 +29,7 @@ def fib(N):
 
 def fibs(N):
     # return the first n fibonacci numbers where fib(1) = 1, fib(2) = 2
-    assert(isinstance(N, int))
+    assert(isinstance(N, (int, np.integer)))
     assert(N>0)
     x = np.zeros((N, ), np.int)
     x[0] = 1
@@ -57,5 +58,57 @@ def fibs_ub(N):
     return x[:-1]
 
 
+def prime_factors_rec(N, at_least):
+    if N == 1:
+        return np.array([])
+    x = np.array([], int)
+    at_most = np.floor(np.sqrt(N))
+    for cand in np.arange(at_least, at_most+1, dtype=int):
+        if not np.mod(N, cand):
+            N_red = N//cand
+            while not np.mod(N_red, cand):
+                N_red //= cand
+            x = np.append(x, cand)
+            return np.append(x, prime_factors_rec(N_red, cand + 1))
+    return N
 
-fib(5)
+
+def prime_factors(N):
+    assert(isinstance(N, (int, np.integer)))
+    x = np.array([], int)
+    at_least = 2
+    at_most = int(np.floor(np.sqrt(N)))
+    for cand in np.arange(at_least, at_most+1, dtype=int):
+        if not np.mod(N, cand):
+            N_red = N//cand
+            while not np.mod(N_red, cand):
+                N_red //= cand
+            x = np.append(x, cand)
+            return np.append(x, prime_factors_rec(N_red, cand + 1))
+    return N
+
+
+def primes(N):
+    # output first n primes
+    x = -np.ones((N, ), int)
+    y = 2
+    for n in range(N):
+        while np.any(np.mod(y, x[:n]) == 0):
+            y += 1
+        x[n] = y
+        y += 1
+
+    return x
+
+
+def primes_ub(N):
+    # output primes below N
+    x = np.array([], int)
+    y = 2
+    while y < N:
+        while np.any(np.mod(y, x) == 0):
+            y += 1
+        x = np.append(x, y)
+        y += 1
+
+    return x
