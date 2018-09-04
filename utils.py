@@ -87,16 +87,44 @@ def prime_factors(N):
             return np.append(x, prime_factors_rec(N_red, cand + 1))
     return N
 
+# this is slower than simpler origin version :(
+# def primes(N):
+#     # output first N primes
+#     x = np.zeros((N, ), int)
+#     # increment candidate y starting with 2
+#     y = 2
+#     for n in range(N):
+#         # search for next prime
+#         while True:
+#             flag = False
+#             # check if candidate y is divisible by any previous primes
+#             for z in x[:n]:
+#                 # iterate instead of numpy divide because when N is huge, this early termination could be faster
+#                 if y//z == y/z:
+#                     flag = True
+#                     break
+#             # if made it through previous primes without finding a divisor, found a new prime
+#             if not flag:
+#                 break
+#             y += 1
+#         x[n] = y
+#         y += 1
+#
+#     return x
+
 
 def primes(N):
     # output first n primes
     x = -np.ones((N, ), int)
-    y = 2
-    for n in range(N):
-        while np.any(np.mod(y, x[:n]) == 0):
-            y += 1
+    # this check means we can go by twos later
+    if N:
+        x[0] = 2
+    y = 3
+    for n in range(1, N):
+        while not np.all(np.mod(y, x[:n])):
+            y += 2
         x[n] = y
-        y += 1
+        y += 2
 
     return x
 
@@ -104,12 +132,14 @@ def primes(N):
 def primes_ub(N):
     # output primes below N
     x = np.array([], int)
-    y = 2
+    if N > 2:
+        x = np.append(x, 2)
+    y = 3
     while y < N:
-        while np.any(np.mod(y, x) == 0):
-            y += 1
+        while not np.all(np.mod(y, x)):
+            y += 2
         x = np.append(x, y)
-        y += 1
+        y += 2
 
     return x
 
@@ -117,3 +147,7 @@ def primes_ub(N):
 def basify(x, base=10):
     # convert a number to a list of base powers
     return np.mod(x // (10 ** np.arange(np.floor(np.log(x)/np.log(base)), -1, -1)), base).astype(np.int)
+
+
+def read_large_int(fn):
+    return np.fromfile(fn)

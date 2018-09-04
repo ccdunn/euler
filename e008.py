@@ -26,5 +26,36 @@ number.
             05886116467109405077541002256983155200055935729725
             71636269561882670428252483600823257530420752963450
 """
+import utils
+import numpy as np
+import os
 
 
+def solve_0(N):
+    loglookup = {
+        '0': -np.log(9**N + 1),
+        '1': np.log(1),
+        '2': np.log(2),
+        '3': np.log(3),
+        '4': np.log(4),
+        '5': np.log(5),
+        '6': np.log(6),
+        '7': np.log(7),
+        '8': np.log(8),
+        '9': np.log(9)
+    }
+
+    fn = os.path.join('data', 'd008.txt')
+    fid = open(fn)
+    txt = fid.read().replace('\n', '')
+    x = np.cumsum(np.array([loglookup[char] for char in txt]))
+    return int(np.around(np.exp(np.max(x[N:] - x[:-N]))))
+
+
+def solve(N):
+    return solve_0(N)
+
+
+# print(solve(2))
+assert(solve(2) == 81)
+print(solve(13))
