@@ -1,41 +1,41 @@
 Checking "e001.py" against solution: 233168
-Time elapsed: user: 192 ms, sys: 31.3 ms, total: 223 ms
+Time elapsed: user: 195 ms, sys: 32 ms, total: 227 ms
 
 Checking "e002.py" against solution: 4613732
-Time elapsed: user: 188 ms, sys: 31.2 ms, total: 220 ms
+Time elapsed: user: 196 ms, sys: 32.1 ms, total: 228 ms
 
 Checking "e003.py" against solution: 6857
-Time elapsed: user: 195 ms, sys: 34.7 ms, total: 230 ms
+Time elapsed: user: 197 ms, sys: 32.9 ms, total: 230 ms
 
 Checking "e004.py" against solution: 906609
-Time elapsed: user: 281 ms, sys: 34.7 ms, total: 315 ms
+Time elapsed: user: 295 ms, sys: 33.2 ms, total: 328 ms
 
 Checking "e005.py" against solution: 232792560
-Time elapsed: user: 186 ms, sys: 29.4 ms, total: 215 ms
+Time elapsed: user: 185 ms, sys: 29.6 ms, total: 214 ms
 
 Checking "e006.py" against solution: 25164150
-Time elapsed: user: 189 ms, sys: 27.5 ms, total: 217 ms
+Time elapsed: user: 189 ms, sys: 30.2 ms, total: 220 ms
 
 Checking "e007.py" against solution: 104743
-Time elapsed: user: 202 ms, sys: 30.7 ms, total: 233 ms
+Time elapsed: user: 201 ms, sys: 30 ms, total: 231 ms
 
 Checking "e008.py" against solution: 23514624000
-Time elapsed: user: 184 ms, sys: 28.1 ms, total: 212 ms
+Time elapsed: user: 186 ms, sys: 31.1 ms, total: 217 ms
 
 Checking "e009.py" against solution: 31875000
-Time elapsed: user: 187 ms, sys: 29.1 ms, total: 216 ms
+Time elapsed: user: 184 ms, sys: 28.8 ms, total: 213 ms
 
 Checking "e010.py" against solution: 142913828922
-Time elapsed: user: 632 ms, sys: 47.3 ms, total: 679 ms
+Time elapsed: user: 690 ms, sys: 55.9 ms, total: 746 ms
 
-Checking "e011-skipped.py" against solution: [no output]
-Time elapsed: user: 23.3 ms, sys: 5.27 ms, total: 28.6 ms
+Checking "e011.py" against solution: 70600674
+Time elapsed: user: 185 ms, sys: 30.3 ms, total: 216 ms
 
-Checking "e012.py" against solution: [no output]
-Time elapsed: user: 23.6 ms, sys: 5.48 ms, total: 29.1 ms
+Checking "e012.py" against solution: Error calling "e012.py".
+Time elapsed: user: 189 ms, sys: 36 ms, total: 225 ms
 
 ---------------------------------------------------------------
 C = correct, I = incorrect, E = error, S = skipped, . = missing
 
-Problems 001-020: C C C C C   C C C C C   I I . . .   . . . . .   
+Problems 001-020: C C C C C   C C C C C   C E . . .   . . . . .   
 

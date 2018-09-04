@@ -24,5 +24,40 @@ divisors.
 What is the value of the first triangle number to have over five hundred
 divisors?
 """
+import utils
+import numpy as np
 
+
+def factors(x):
+    if x == 1:
+        return np.array([1])
+    c = np.arange(1, x/2 + 1, dtype=int)
+    return np.append(c[np.where(np.mod(x, c) == 0)[0]], x)
+
+
+def solve(N):
+    x = 1
+    a = 2
+    while True:
+        if factors(x) > N:
+            break
+
+        x += 2
+    return
+
+
+def scratch():
+    factors(1)
+    sum = 0
+    for n in np.arange(1, 100, dtype=int):
+        sum += n
+        print(factors(sum))
+
+    np.prod(np.arange(1, 500 + 1))
+    return
+
+scratch()
+print(solve(5))
+assert(solve(5) == 28)
+print(solve(500))
 
