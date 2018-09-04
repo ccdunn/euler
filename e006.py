@@ -17,11 +17,14 @@ hundred natural numbers and the square of the sum.
 import numpy as np
 import utils
 
+
 def solve_0(N):
     N_2 = N**2
     N_3 = N_2*N
     N_4 = N_2**2
+    # sq of sum from 1 to N = (N*(N+1)/2)**2
     sq_of_sum = (N_4/2 + N_3 + N_2/2)/2
+    # sum of sq from 1 to N = N*(N+1)*(N-1)/3 + N*(N+1)/2
     sum_of_sq = N_3/3 + N/6 + N_2/2
     return int(sq_of_sum - sum_of_sq)
 
@@ -32,7 +35,7 @@ def solve(N):
 
 def scratch():
     N = 10
-    print(N*(N+1)*(N+2)/3)
+    print(N*(N+1)*(N-1)/3 + N*(N+1)/2)
     return
 
 
