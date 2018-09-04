@@ -31,5 +31,48 @@ The product of these numbers is 26 * 63 * 78 * 14 = 1788696.
 What is the greatest product of four adjacent numbers in any direction
 (up, down, left, right, or diagonally) in the 20 * 20 grid?
 """
+import utils
+import numpy as np
 
+
+def load_data(fn='/Users/cda0201/Documents/euler/data/d011.txt'):
+    fid = open(fn, 'r')
+    return np.array([[int(num) for num in line.split()] for line in fid.read().split('\n')])
+
+
+def solve(N):
+    fill_val = np.exp(1/(9**N + 1))
+    # should i just fft this and convolve?
+    data = (np.pad(load_data(), 1, mode='constant', constant_values=0)).astype(np.float)
+    (x, y) = np.where(data == 0)
+    data[x, y] = fill_val
+    data = np.log(data)
+    v = np.cumsum(data, axis=0)
+    h = np.cumsum(data, axis=1)
+
+    k_min = np.min(data.shape)
+    k_max = np.max(data.shape)
+
+    d1 = fill_val*np.ones((2*k_max, k_min))
+    for k in range(-k_max + 1, k_max):
+        tmp = np.cumsum(np.diag(data, k))
+        d1[k_max + k - 1, :tmp.size] = tmp
+
+    data = np.rot90(data)
+    d2 = fill_val*np.ones((2*k_max, k_min))
+    for k in range(-k_max + 1, np.max(data.shape)):
+        tmp = np.cumsum(np.diag(data, k))
+        d2[k_max + k - 1, :tmp.size] = tmp
+
+    max_h = np.max(h[:, N:] - h[:, :-N])
+    max_v = np.max(v[N:, :] - v[:-N, :])
+    max_d1 = np.max(d1[:, N:] - d1[:, :-N])
+    max_d2 = np.max(d2[:, N:] - d2[:, :-N])
+
+    return int(np.around(np.exp(np.max([max_h, max_v, max_d1, max_d2]))))
+
+
+# print(solve(2))
+assert(solve(2) == 97*99) # diagonal, near upper left corner
+print(solve(4))
 

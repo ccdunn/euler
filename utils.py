@@ -170,6 +170,7 @@ def primes(N):
 
 
 def primes_ub(N):
+    # output primes below N
     if N <= 2:
         return np.array([], int)
     y = np.arange(3, N, 2, dtype=int)
