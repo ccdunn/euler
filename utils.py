@@ -113,33 +113,71 @@ def prime_factors(N):
 #     return x
 
 
+# def primes(N):
+#     # output first n primes
+#     x = -np.ones((N, ), int)
+#     # this check means we can go by twos later
+#     if N:
+#         x[0] = 2
+#     y = 3
+#     for n in range(1, N):
+#         while not np.all(np.mod(y, x[:n])):
+#             y += 2
+#         x[n] = y
+#         y += 2
+#
+#     return x
+
+
 def primes(N):
-    # output first n primes
-    x = -np.ones((N, ), int)
-    # this check means we can go by twos later
-    if N:
-        x[0] = 2
-    y = 3
-    for n in range(1, N):
-        while not np.all(np.mod(y, x[:n])):
-            y += 2
-        x[n] = y
-        y += 2
+    # output first N primes
+    if not N:
+        return np.array([], int)
+    if N >= 4:
+        ub = N*(np.log(N) + np.log(np.log(N))) + 1
+    else:
+        ub = 6
+    x = np.zeros((N, ), int)
+    x[0] = 2
+    ind = 1
+    y = np.arange(3, ub, 2, dtype=int)
+    for n in range(y.size):
+        if y[n]:
+            y[n + y[n]::y[n]] = 0
+            x[ind] = y[n]
+            ind += 1
+            if ind == N:
+                break
 
     return x
 
 
+# def primes_ub(N):
+#     # output primes below N
+#     x = np.array([], int)
+#     if N > 2:
+#         x = np.append(x, 2)
+#     y = 3
+#     while y < N:
+#         while not np.all(np.mod(y, x)):
+#             y += 2
+#         x = np.append(x, y)
+#         y += 2
+#     if x[-1] >= N:
+#         x = x[:-1]
+#
+#     return x
+
+
 def primes_ub(N):
-    # output primes below N
-    x = np.array([], int)
-    if N > 2:
-        x = np.append(x, 2)
-    y = 3
-    while y < N:
-        while not np.all(np.mod(y, x)):
-            y += 2
-        x = np.append(x, y)
-        y += 2
+    if N <= 2:
+        return np.array([], int)
+    y = np.arange(3, N, 2, dtype=int)
+    x = np.array([2], int)
+    for n in range(y.size):
+        if y[n]:
+            y[n + y[n]::y[n]] = 0
+            x = np.append(x, y[n])
 
     return x
 
