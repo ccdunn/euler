@@ -60,7 +60,7 @@ def fibs_ub(N):
 
 def prime_factors_rec(N, at_least):
     if N == 1:
-        return np.array([])
+        return np.array([], int)
     x = np.array([], int)
     at_most = np.floor(np.sqrt(N))
     for cand in np.arange(at_least, at_most+1, dtype=int):
@@ -86,6 +86,56 @@ def prime_factors(N):
             x = np.append(x, cand)
             return np.append(x, prime_factors_rec(N_red, cand + 1))
     return N
+
+
+def factorize_rec(N, at_least):
+    if N == 1:
+        return np.array([], dtype=int)
+    x = np.array([], int)
+    at_most = np.floor(np.sqrt(N))
+    for cand in np.arange(at_least, at_most+1, dtype=int):
+        if not np.mod(N, cand):
+            N_red = N//cand
+            x = np.append(x, cand)
+            while not np.mod(N_red, cand):
+                N_red //= cand
+                x = np.append(x, cand)
+            return np.append(x, prime_factors_rec(N_red, cand + 1))
+    return N
+
+
+def factorize(N):
+    assert(isinstance(N, (int, np.integer)))
+    x = np.array([], int)
+    at_least = 2
+    at_most = int(np.floor(np.sqrt(N)))
+    for cand in np.arange(at_least, at_most+1, dtype=int):
+        if not np.mod(N, cand):
+            N_red = N//cand
+            x = np.append(x, cand)
+            while not np.mod(N_red, cand):
+                N_red //= cand
+                x = np.append(x, cand)
+            return np.append(x, factorize_rec(N_red, cand + 1))
+    return N
+
+
+def factor_count(N):
+    _, counts = np.unique(factorize(N), return_counts=True)
+    return np.prod(counts + 1)
+
+
+def divisors_rec(pfacts, counts, divs):
+    if not pfacts.size:
+        return divs
+    return divisors_rec(pfacts[1:], counts[1:], np.kron(np.power(pfacts[0], np.arange(0, counts[0] + 1)), divs))
+
+
+def divisors(N):
+    pfacts, counts = np.unique(factorize(N), return_counts=True)
+    return divisors_rec(pfacts, counts, np.array([1], int))
+
+
 
 # this is slower than simpler origin version :(
 # def primes(N):
@@ -188,5 +238,6 @@ def basify(x, base=10):
     return np.mod(x // (10 ** np.arange(np.floor(np.log(x)/np.log(base)), -1, -1)), base).astype(np.int)
 
 
-def read_large_int(fn):
-    return np.fromfile(fn)
+def debasify(x, base=10):
+    # convert a number to a list of base powers
+    return np.inner(x, np.flip(base ** np.arange(x.size, dtype=int), 0))

@@ -26,6 +26,7 @@ divisors?
 """
 import utils
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def factors(x):
@@ -36,28 +37,42 @@ def factors(x):
 
 
 def solve(N):
+    # all2s_lb = np.prod(utils.primes(int(np.ceil(np.log2(N + 1)))))
+    # unique_lb = 2**int(np.ceil(np.log2(N + 1)))
+    # a = int(np.ceil(np.max(np.roots(np.array([1, 1, -2*N])))))
+    # x = (a*(a + 1))//2
     x = 1
-    a = 2
+    a = 1
+    p = np.array([1])
     while True:
-        if factors(x) > N:
+        # print("{}: {}".format(x, utils.divisors(x)))
+        p = np.append(p, utils.factor_count(x))
+        if p[-1] > N:
+            break
+        a += 1
+        x += a
+    # plt.plot(p)
+
+    return x
+
+
+
+def scratch(N):
+    a = int(np.ceil(np.max(np.roots(np.array([1, 1, -2*N])))))
+    x = (a*(a + 1))//2
+    f = np.array([], int)
+    while True:
+        if utils.factor_count(x) <= N:
             break
 
-        x += 2
-    return
+        a += 1
+        x += a
+    return x
 
-
-def scratch():
-    factors(1)
-    sum = 0
-    for n in np.arange(1, 100, dtype=int):
-        sum += n
-        print(factors(sum))
-
-    np.prod(np.arange(1, 500 + 1))
-    return
-
-scratch()
-print(solve(5))
-assert(solve(5) == 28)
+# utils.divisors(10)
+# scratch(500)
+# print(solve(5))
+# assert(solve(5) == 28)
+# print(solve(300))
 print(solve(500))
 
