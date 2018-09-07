@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da945186-411c-420b-bb3c-6f415c9df255" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e013.py" afterPath="$PROJECT_DIR$/e013.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e014.py" afterPath="$PROJECT_DIR$/e014.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/e015.py" afterPath="$PROJECT_DIR$/e015.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,13 +49,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="e014.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="e014.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/e014.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
               <folding>
                 <element signature="e#653#671#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="e015.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/e015.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="e#229#241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,6 +171,7 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/e013.py" />
         <option value="$PROJECT_DIR$/e014.py" />
+        <option value="$PROJECT_DIR$/e015.py" />
       </list>
     </option>
   </component>
@@ -243,24 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.e014">
-    <configuration name="e011-skipped" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="euler" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/e011-skipped.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.e015">
     <configuration name="e012" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -312,6 +305,23 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="e015" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="euler" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/e015.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="score" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -331,18 +341,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.score" />
-      <item index="1" class="java.lang.String" itemvalue="Python.e011-skipped" />
-      <item index="2" class="java.lang.String" itemvalue="Python.e012" />
-      <item index="3" class="java.lang.String" itemvalue="Python.e013" />
-      <item index="4" class="java.lang.String" itemvalue="Python.e014" />
+      <item index="1" class="java.lang.String" itemvalue="Python.e012" />
+      <item index="2" class="java.lang.String" itemvalue="Python.e013" />
+      <item index="3" class="java.lang.String" itemvalue="Python.e014" />
+      <item index="4" class="java.lang.String" itemvalue="Python.e015" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.e014" />
-        <item index="1" class="java.lang.String" itemvalue="Python.e013" />
-        <item index="2" class="java.lang.String" itemvalue="Python.e012" />
-        <item index="3" class="java.lang.String" itemvalue="Python.score" />
-        <item index="4" class="java.lang.String" itemvalue="Python.e011-skipped" />
+        <item index="0" class="java.lang.String" itemvalue="Python.e015" />
+        <item index="1" class="java.lang.String" itemvalue="Python.e014" />
+        <item index="2" class="java.lang.String" itemvalue="Python.e013" />
+        <item index="3" class="java.lang.String" itemvalue="Python.e012" />
+        <item index="4" class="java.lang.String" itemvalue="Python.score" />
       </list>
     </recent_temporary>
   </component>
@@ -673,6 +683,16 @@
           <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
           <folding>
             <element signature="e#653#671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e015.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="e#229#241#0" expanded="true" />
           </folding>
         </state>
       </provider>
