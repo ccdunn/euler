@@ -1,5 +1,6 @@
 import numpy as np
 import sys
+import math
 
 
 def sum_1toN(N):
@@ -233,11 +234,23 @@ def primes_ub(N):
     return x
 
 
-def basify(x, base=10):
+def basify(x, base=10.0):
     # convert a number to a list of base powers
-    return np.mod(x // (10 ** np.arange(np.floor(np.log(x)/np.log(base)), -1, -1)), base).astype(np.int)
+    assert(float(x) == x)
+    return np.mod(x // (base ** np.flip(np.arange(np.log(float(x))/np.log(float(base))), 0)), base).astype(type(x))
+
+
+def basify10(x):
+    # works even on arbitrarily long python int class
+    return [int(char) for char in x.__str__().split('.')[0]]
+
+
+def debasify10(x):
+    # works even on arbitrarily long python int class
+    len_x = len(x)
+    return np.sum(np.array([int(x[ii]) * 10**(len_x - ii - 1) for ii in reversed(range(len_x))]))
 
 
 def debasify(x, base=10):
     # convert a number to a list of base powers
-    return np.inner(x, np.flip(base ** np.arange(x.size, dtype=int), 0))
+    return np.inner(x, base ** np.arange(x.size - 1, -1, -1, dtype=type(x)))

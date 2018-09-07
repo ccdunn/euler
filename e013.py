@@ -110,9 +110,16 @@ import utils
 import numpy as np
 
 
-def solve(N):
+def solve_0(N):
     fn = '/Users/cda0201/Documents/euler/data/d013.txt'
-    return utils.debasify(utils.basify(np.sum(np.loadtxt(fn)))[:N])
+    fid = open(fn, 'r')
+    txt = fid.read()
+    data = np.sum(np.array([int(line) for line in txt.split()]))
+    return utils.debasify10(utils.basify10(data)[:N])
+
+
+def solve(N):
+    return utils.debasify10(utils.basify10(np.sum(np.array([int(line) for line in open('/Users/cda0201/Documents/euler/data/d013.txt', 'r').read().split()])))[:N])
 
 
 print(solve(10))
