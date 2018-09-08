@@ -242,7 +242,7 @@ def basify(x, base=10.0):
 
 def basify10(x):
     # works even on arbitrarily long python int class
-    return [int(char) for char in x.__str__().split('.')[0]]
+    return np.array([int(char) for char in x.__str__().split('.')[0]])
 
 
 def debasify10(x):
