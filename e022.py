@@ -13,5 +13,24 @@ COLIN would obtain a score of 938 * 53 = 49714.
 
 What is the total of all the name scores in the file?
 """
+import numpy as np
+import utils
 
 
+def load_data(fn='/Users/cda0201/Documents/euler/data/d022.txt'):
+    fid = open(fn, 'r')
+    txt = fid.read()
+    return txt.strip()[1:-1].split('\",\"')
+
+
+def solve(fn='/Users/cda0201/Documents/euler/data/d022.txt'):
+    names = load_data(fn)
+    names.sort()
+    sorted_scores = np.array([[np.sum(np.array([ord(letter) for letter in name]) - ord("A") + 1)] for name in names])
+    assert(names.index("COLIN") == 938 - 1)
+    assert(sorted_scores[names.index("COLIN")] == 53)
+    return (np.cumsum(np.ones((1, len(names)), dtype=int))).dot(sorted_scores)[0]
+
+
+
+print(solve())
