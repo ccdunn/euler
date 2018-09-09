@@ -35,5 +35,22 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem
 a triangle containing one-hundred rows; it cannot be solved by brute
 force, and requires a clever method! ;o)
 """
+import numpy as np
+import utils
 
 
+def load_data(fn='/Users/cda0201/Documents/euler/data/d018.txt'):
+    fid = open(fn, 'r')
+    return [np.array([int(num) for num in line.split()]) for line in fid.read().split('\n')]
+
+
+def solve(fn='/Users/cda0201/Documents/euler/data/d018.txt'):
+    data = load_data(fn)
+    for row in np.arange(len(data) - 2, -1, -1, dtype=int):
+        data[row] += np.array([np.max(data[row + 1][col:col+2]) for col in range(data[row].size)])
+    return data[0][0]
+
+
+# print(solve('/Users/cda0201/Documents/euler/data/d018_dev.txt'))
+# assert(solve('/Users/cda0201/Documents/euler/data/d018_dev.txt') == 23)
+print(solve('/Users/cda0201/Documents/euler/data/d018.txt'))
