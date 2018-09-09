@@ -13,5 +13,29 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22,
 
 Evaluate the sum of all the amicable numbers under 10000.
 """
+import numpy as np
+import utils
 
+
+def d(n):
+    return np.sum(utils.divisors(n)[:-1])
+
+
+assert(d(220) == 284)
+assert(d(284) == 220)
+assert(d(d(284)) == 284)
+assert(d(d(220)) == 220)
+
+
+def solve(N):
+    count = 0
+    for n in np.arange(2, N):
+
+        dtmp = d(n)
+        if dtmp != n and d(dtmp) == n:
+            count += n
+    return count
+
+
+print(solve(10000))
 

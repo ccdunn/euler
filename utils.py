@@ -63,7 +63,7 @@ def prime_factors_rec(N, at_least):
     if N == 1:
         return np.array([], int)
     x = np.array([], int)
-    at_most = np.floor(np.sqrt(N))
+    at_most = int(np.floor(np.sqrt(N)))
     for cand in np.arange(at_least, at_most+1, dtype=int):
         if not np.mod(N, cand):
             N_red = N//cand
@@ -93,7 +93,7 @@ def factorize_rec(N, at_least):
     if N == 1:
         return np.array([], dtype=int)
     x = np.array([], int)
-    at_most = np.floor(np.sqrt(N))
+    at_most = int(np.floor(np.sqrt(N)))
     for cand in np.arange(at_least, at_most+1, dtype=int):
         if not np.mod(N, cand):
             N_red = N//cand
@@ -101,7 +101,7 @@ def factorize_rec(N, at_least):
             while not np.mod(N_red, cand):
                 N_red //= cand
                 x = np.append(x, cand)
-            return np.append(x, prime_factors_rec(N_red, cand + 1))
+            return np.append(x, factorize_rec(N_red, cand + 1))
     return N
 
 
@@ -133,6 +133,8 @@ def divisors_rec(pfacts, counts, divs):
 
 
 def divisors(N):
+    if N == 1:
+        return np.array([1], int)
     pfacts, counts = np.unique(factorize(N), return_counts=True)
     return divisors_rec(pfacts, counts, np.array([1], int))
 
