@@ -93,15 +93,20 @@ def solve_0(N):
 
 
 def solve_1(N):
-    assert(N < 100000)
-    # extras
-    lets = np.sum(lets1000[:np.mod(N, 1000) + 1])
+    assert(N < 1000000)
+    # count all letters below 1000
+    lets = np.sum(lets1000[:np.minimum(999, N) + 1])
     if N >= 1000:
-        # extras
-        lets += np.sum(lets1000[1:N//1000 + 1] + len('thousand'))
+        # deal with all the "thousand"s
+        lets += (N - 999)*len('thousand')
+        # last full 1000
+        last_full_1000 = (N + 1)//1000 - 1
+        # all letters of full 1000s
+        lets += last_full_1000 * np.sum(lets1000)
+        if (N + 1) % 1000:
+            # deal with incomplete thousand
+            lets += np.sum(lets1000[:(N % 1000) + 1]) + ((N % 1000) + 1) * lets1000[N//1000]
 
-        # all else in full thousands
-        lets += np.sum(lets1000) * (np.sum(lets1000[1:N//1000 + 1] + len('thousand')))
     return lets
 
 
@@ -112,13 +117,13 @@ def solve_2(N):
 
 
 def solve(N):
-    return solve_2(N)
+    return solve_1(N)
 
 
 # print(solve(5))
-assert(solve(5) == 19)
+# assert(solve(5) == 19)
 # print(solve(1000) - solve(999))
-assert(solve(1000) - solve(999) == len('one thousand'.replace(" ", "")))
+# assert(solve(1000) - solve(999) == len('one thousand'.replace(" ", "")))
 print(solve(1000))
 
 
