@@ -22,5 +22,20 @@ two abundant numbers is less than this limit.
 Find the sum of all the positive integers which cannot be written as the
 sum of two abundant numbers.
 """
+import numpy as np
+import utils
 
+
+def solve(N):
+    ab_nums = np.array([], dtype=int)
+    for n in np.arange(1, N + 1, dtype=int):
+        if n < np.sum(utils.divisors(n)[:-1]):
+            ab_nums = np.append(ab_nums, n)
+
+    ab_sums = np.unique((ab_nums[:, np.newaxis] + ab_nums[np.newaxis, :]).ravel())
+
+    return utils.sum_1toN(N) - np.sum(ab_sums[np.where(ab_sums <= N)[0]])
+
+
+print(solve(28123))
 
