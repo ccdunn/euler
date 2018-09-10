@@ -21,5 +21,28 @@ be seen that ^1/[7] has a 6-digit recurring cycle.
 Find the value of d < 1000 for which ^1/[d] contains the longest recurring
 cycle in its decimal fraction part.
 """
+import numpy as np
+import utils
+
+
+def reps(n):
+    rems = np.array([10], dtype=int)
+
+    while rems[-1]:
+        rems = np.append(rems, (rems[-1] - (rems[-1] // n) * n)*10)
+        if np.any(rems[:-1] == rems[-1]):
+            return rems.size - np.where(rems == rems[-1])[0][0]
+
+    return 0
+
+
+
+def solve(N):
+    return np.argmax(np.array([reps(n) for n in np.arange(2, N)])) + 2
+
+
+# print(solve(11))
+# assert(solve(11) == 7)
+print(solve(1000))
 
 
