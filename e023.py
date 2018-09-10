@@ -27,14 +27,26 @@ import utils
 
 
 def solve(N):
+    ab_nonmult_nums = np.array([], dtype=int)
     ab_nums = np.array([], dtype=int)
     for n in np.arange(1, N + 1, dtype=int):
-        if n < np.sum(utils.divisors(n)[:-1]):
+        if not np.all(np.mod(n, ab_nonmult_nums)):
             ab_nums = np.append(ab_nums, n)
+        elif n < np.sum(utils.divisors(n)[:-1]):
+            ab_nums = np.append(ab_nums, n)
+            ab_nonmult_nums = np.append(ab_nonmult_nums, n)
 
-    ab_sums = np.unique((ab_nums[:, np.newaxis] + ab_nums[np.newaxis, :]).ravel())
+    K = ab_nums.size
+    L = np.where(ab_nums*2 > N)[0][0]
+    ab_sums = np.zeros((L**2//2 + L + (K - L)*L, ), dtype=int)
+    loc = 0
+    for ii in range(L):
+        ab_sums[loc:loc + ab_nums.size - ii] = ab_nums[ii] + ab_nums[ii:]
+        loc += ab_nums.size - ii
 
-    return utils.sum_1toN(N) - np.sum(ab_sums[np.where(ab_sums <= N)[0]])
+    ab_sums = ab_sums[np.where(ab_sums <= N)[0]]
+
+    return utils.sum_1toN(N) - np.sum(np.unique(ab_sums))
 
 
 print(solve(28123))
