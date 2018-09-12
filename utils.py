@@ -9,6 +9,11 @@ def sum_1toN(N):
     return int(N*(N+1)/2)
 
 
+def sum_sq_1toN(N):
+    # sum of sq from 1 to N = N*(N+1)*(N-1)/3 + N*(N+1)/2
+    return N**3/3 + N/6 + N**2/2
+
+
 def fib(N):
     # return the nth fibonacci number where fib(1) = 1, fib(2) = 2
     if N <= 2:
@@ -124,6 +129,11 @@ def factorize(N):
 def factor_count(N):
     _, counts = np.unique(factorize(N), return_counts=True)
     return np.prod(counts + 1)
+
+
+def factorize_and_count(N):
+    factors, counts = np.unique(factorize(N), return_counts=True)
+    return factors, counts
 
 
 def divisors_rec(pfacts, counts, divs):

@@ -27,14 +27,12 @@ import utils
 
 def reps(n):
     rems = np.array([10], dtype=int)
-
     while rems[-1]:
         rems = np.append(rems, (rems[-1] - (rems[-1] // n) * n)*10)
         if np.any(rems[:-1] == rems[-1]):
             return rems.size - np.where(rems == rems[-1])[0][0]
 
     return 0
-
 
 
 def solve(N):
