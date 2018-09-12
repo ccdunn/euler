@@ -16,5 +16,20 @@ The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 Find the sum of all the numbers that can be written as the sum of fifth
 powers of their digits.
 """
+import numpy as np
+import utils
 
+
+def solve(N):
+    vmax = 1
+    while (10**vmax - 1)/vmax <= 9**N:
+        vmax += 1
+    nmax = vmax*9**N
+    cands = np.arange(2, nmax, dtype=int)
+    return sum(cands[[cand == np.sum(utils.basify10(cand) ** N) for cand in cands]])
+
+
+# print(solve(4))
+# assert(solve(4) == 19316)
+print(solve(5))
 
