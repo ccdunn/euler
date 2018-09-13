@@ -1,72 +1,115 @@
 Checking "e001.py" against solution: 233168
-Time elapsed: user: 185 ms, sys: 29.3 ms, total: 214 ms
+Time elapsed: user: 187 ms, sys: 31.7 ms, total: 218 ms
 
 Checking "e002.py" against solution: 4613732
-Time elapsed: user: 181 ms, sys: 28.2 ms, total: 210 ms
+Time elapsed: user: 186 ms, sys: 28.3 ms, total: 215 ms
 
 Checking "e003.py" against solution: 6857
-Time elapsed: user: 185 ms, sys: 28.2 ms, total: 213 ms
+Time elapsed: user: 199 ms, sys: 32.1 ms, total: 231 ms
 
 Checking "e004.py" against solution: 906609
-Time elapsed: user: 277 ms, sys: 29 ms, total: 306 ms
+Time elapsed: user: 268 ms, sys: 28.8 ms, total: 296 ms
 
 Checking "e005.py" against solution: 232792560
-Time elapsed: user: 176 ms, sys: 25.3 ms, total: 202 ms
+Time elapsed: user: 179 ms, sys: 26.3 ms, total: 205 ms
 
 Checking "e006.py" against solution: 25164150
-Time elapsed: user: 174 ms, sys: 27.5 ms, total: 202 ms
+Time elapsed: user: 186 ms, sys: 29.1 ms, total: 215 ms
 
 Checking "e007.py" against solution: 104743
-Time elapsed: user: 197 ms, sys: 27.3 ms, total: 225 ms
+Time elapsed: user: 202 ms, sys: 28.1 ms, total: 231 ms
 
 Checking "e008.py" against solution: 23514624000
-Time elapsed: user: 191 ms, sys: 30.6 ms, total: 222 ms
+Time elapsed: user: 186 ms, sys: 26.7 ms, total: 213 ms
 
 Checking "e009.py" against solution: 31875000
-Time elapsed: user: 183 ms, sys: 25.5 ms, total: 209 ms
+Time elapsed: user: 189 ms, sys: 29.3 ms, total: 219 ms
 
 Checking "e010.py" against solution: 142913828922
-Time elapsed: user: 596 ms, sys: 36.5 ms, total: 632 ms
+Time elapsed: user: 638 ms, sys: 42 ms, total: 680 ms
 
 Checking "e011.py" against solution: 70600674
-Time elapsed: user: 172 ms, sys: 26.7 ms, total: 199 ms
+Time elapsed: user: 198 ms, sys: 29.6 ms, total: 227 ms
 
 Checking "e012.py" against solution: 76576500
-Time elapsed: user: 7.71 s, sys: 64.7 ms, total: 7.78 s
+Time elapsed: user: 8.32 s, sys: 85.1 ms, total: 8.4 s
 
 Checking "e013.py" against solution: 5537376230
-Time elapsed: user: 164 ms, sys: 26.3 ms, total: 190 ms
+Time elapsed: user: 184 ms, sys: 28.2 ms, total: 213 ms
 
 Checking "e014.py" against solution: 837799
-Time elapsed: user: 16.2 s, sys: 52.6 ms, total: 16.2 s
+Time elapsed: user: 17.1 s, sys: 61 ms, total: 17.2 s
 
 Checking "e015.py" against solution: 137846528820
-Time elapsed: user: 181 ms, sys: 27.9 ms, total: 209 ms
+Time elapsed: user: 189 ms, sys: 28.8 ms, total: 218 ms
 
 Checking "e016.py" against solution: 1366
-Time elapsed: user: 185 ms, sys: 28.5 ms, total: 213 ms
+Time elapsed: user: 185 ms, sys: 30.2 ms, total: 215 ms
 
 Checking "e017.py" against solution: 21124
-Time elapsed: user: 184 ms, sys: 28.1 ms, total: 212 ms
+Time elapsed: user: 175 ms, sys: 26.5 ms, total: 202 ms
 
 Checking "e018.py" against solution: 1074
-Time elapsed: user: 185 ms, sys: 29.4 ms, total: 215 ms
+Time elapsed: user: 184 ms, sys: 27.4 ms, total: 211 ms
 
 Checking "e019.py" against solution: 171
-Time elapsed: user: 195 ms, sys: 28.7 ms, total: 224 ms
+Time elapsed: user: 186 ms, sys: 26.8 ms, total: 213 ms
 
 Checking "e020.py" against solution: 648
-Time elapsed: user: 193 ms, sys: 27 ms, total: 220 ms
+Time elapsed: user: 179 ms, sys: 28.9 ms, total: 208 ms
 
 Checking "e021.py" against solution: 31626
-Time elapsed: user: 3.48 s, sys: 38.8 ms, total: 3.52 s
+Time elapsed: user: 3.39 s, sys: 32.7 ms, total: 3.42 s
 
-Checking "e022.py" against solution: [no output]
-Time elapsed: user: 22 ms, sys: 4.79 ms, total: 26.8 ms
+Checking "e022.py" against solution: 871198282
+Time elapsed: user: 227 ms, sys: 31.1 ms, total: 258 ms
+
+Checking "e023.py" against solution: 4179871
+Time elapsed: user: 5.66 s, sys: 213 ms, total: 5.87 s
+
+Checking "e024.py" against solution: 2783915460
+Time elapsed: user: 192 ms, sys: 36.1 ms, total: 229 ms
+
+Checking "e025.py" against solution: 4782
+Time elapsed: user: 188 ms, sys: 27.8 ms, total: 216 ms
+
+Checking "e026.py" against solution: 983
+Time elapsed: user: 1.19 s, sys: 28.7 ms, total: 1.22 s
+
+Checking "e027-skipped.py" against solution: 
+-1
+41
+40
+[  41   41   43   47   53   61   71   83   97  113  131  151  173  197  223
+  251  281  313  347  383  421  461  503  547  593  641  691  743  797  853
+  911  971 1033 1097 1163 1231 1301 1373 1447 1523 1601]
+41
+-61
+971
+70
+[ 971  911  853  797  743  691  641  593  547  503  461  421  383  347  313
+  281  251  223  197  173  151  131  113   97   83   71   61   53   47   43
+   41   41   43   47   53   61   71   83   97  113  131  151  173  197  223
+  251  281  313  347  383  421  461  503  547  593  641  691  743  797  853
+  911  971 1033 1097 1163 1231 1301 1373 1447 1523 1601]
+59231
+Time elapsed: user: 31.1 s, sys: 4.1 s, total: 35.2 s
+
+Checking "e028.py" against solution: 669171001
+Time elapsed: user: 211 ms, sys: 48.6 ms, total: 260 ms
+
+Checking "e029.py" against solution: 9183
+Time elapsed: user: 194 ms, sys: 29.1 ms, total: 223 ms
+
+Checking "e030.py" against solution: 443839
+Time elapsed: user: 4.46 s, sys: 53.6 ms, total: 4.52 s
+
+Checking "e031.py" against solution: [no output]
+Time elapsed: user: 22.1 ms, sys: 5.62 ms, total: 27.7 ms
 
 ---------------------------------------------------------------
 C = correct, I = incorrect, E = error, S = skipped, . = missing
 
 Problems 001-020: C C C C C   C C C C C   C C C C C   C C C C C   
-Problems 021-040: C I . . .   . . . . .   . . . . .   . . . . .   
+Problems 021-040: C C C C C   C I C C C   I . . . .   . . . . .   
 
