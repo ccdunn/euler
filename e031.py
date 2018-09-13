@@ -25,6 +25,8 @@ def count_change_rec(N, denoms):
         return 1
     if not denoms.size:
         return 0
+    if denoms.size == 1:
+        return not (N % denoms[-1])
     return sum([count_change_rec(N - coins, denoms[:-1]) for coins in denoms[-1]*np.arange(0, N//denoms[-1] + 1, dtype=int)])
 
 
